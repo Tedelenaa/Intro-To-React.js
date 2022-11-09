@@ -59,3 +59,37 @@ export const bankDBs = [
     streetNum: 28,
   },
 ];
+
+export const PersonData = [
+  {
+    id: 1,
+    username: "Ada",
+  },
+  {
+    id: 2,
+    username: "John",
+  },
+  {
+    id: 3,
+    username: "Esther",
+  },
+];
+
+export const ProductData = [
+  {
+    id: 1,
+    productname: "Milo",
+  },
+  {
+    id: 2,
+    productname: "Dano",
+  },
+  {
+    id: 3,
+    productname: "Peak",
+  },
+  {
+    id: 4,
+    productname: "Sugar",
+  },
+];

@@ -2,19 +2,25 @@ import React from "react";
 // import heroImg from "./images/homepage_images/hero_image.png";
 // import Logo from "./images/Logo.svg";
 import { bankDBs } from "./data";
-import Guest from "./Navbar";
+import Navbar from "./Navbar";
+import { CounterApp, UpdateUser, PeopleData, ProductList } from "./useState";
 
 const App = () => {
   return (
     <React.Fragment>
-      <h1>Hey React!!!</h1>
+      {/* <h1>Hey React!!!</h1>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, non?
-      </p>
-      <Guest />
+      </p> */}
+      {/* <Navbar /> */}
       {/* <Navbar></Navbar> */}
       {/* <CardComponent /> */}
-      <CardLogic />
+      {/* <CardLogic /> */}
+
+      <UpdateUser />
+      <CounterApp />
+      <PeopleData />
+      <ProductList />
     </React.Fragment>
   );
 };
