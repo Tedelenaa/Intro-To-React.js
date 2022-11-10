@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { bankDBs, PersonData, ProductData } from "./data";
+import data from "./data.json";
 
 // export const UpdateUser = () => {
 //   const [username, setUsername] = useState("John");
@@ -85,7 +86,7 @@ export const UpdateUser = () => {
 // };
 
 export const CounterApp = () => {
-  const [num, setNum] = useState(10);
+  const [num, setNum] = useState(0);
 
   const reduceNum = () => {
     setNum(num - 1);
@@ -94,7 +95,7 @@ export const CounterApp = () => {
   return (
     <div className="d-flex flex-column align-items-center mt-5">
       <h1>My Counter App</h1>
-      <h3>{num}</h3>
+      <h3>The number is: {num}</h3>
 
       <div className="d-flex">
         <button
@@ -104,8 +105,12 @@ export const CounterApp = () => {
           Add
         </button>
 
-        <button className="btn btn-secondary" onClick={reduceNum}>
+        <button className="btn btn-secondary me-3" onClick={reduceNum}>
           Subtract
+        </button>
+
+        <button className="btn btn-info" onClick={() => setNum(0)}>
+          Reset
         </button>
       </div>
     </div>
@@ -197,7 +202,21 @@ export const ProductList = () => {
       <h1>Products</h1>
 
       <ul>
-        {products.map((product) => {
+        {/* {products.map((product) => {
+          const { id, productname } = product;
+          return (
+            <li key={id} className="mt-3">
+              {productname}
+              <button
+                className="btn btn-danger ms-3"
+                onClick={() => removeProduct(id)}
+              >
+                Delete
+              </button>
+            </li>
+          );
+        })} */}
+        {data.ProductData.map((product) => {
           const { id, productname } = product;
           return (
             <li key={id} className="mt-3">
@@ -219,6 +238,42 @@ export const ProductList = () => {
           Clear All
         </button>
       </ul>
+    </div>
+  );
+};
+
+export const UsestateObj = () => {
+  //   const [name, setName] = useState("John");
+  //   const [age, setAge] = useState(0);
+  //     const [message, setMessage] = useState("lorem ipsum");
+
+  // const [person, setPerson] = useState({ name: 'peter', age: 24, message: 'random message' })
+
+  const personDetail = {
+    name: "peter",
+    age: 24,
+    message: "random message",
+  };
+
+  const [person, setPerson] = useState(personDetail);
+
+  const updateMsg = () => {
+    if (person.message === "random message" && person.name === "peter") {
+      setPerson({ ...person, message: "hello", name: "esther" });
+    } else {
+      setPerson({ ...person, message: "random message", name: "peter" });
+    }
+  };
+
+  return (
+    <div className="d-flex flex-column align-items-center mt-5">
+      <h1>Person Description</h1>
+      <h3>Name: {person.name}</h3>
+      <h4>Age: {person.age}</h4>
+      <h6>Message: {person.message}</h6>
+      <button className="btn btn-success" onClick={updateMsg}>
+        Update Message
+      </button>
     </div>
   );
 };

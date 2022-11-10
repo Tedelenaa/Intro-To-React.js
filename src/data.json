@@ -1,0 +1,67 @@
+{
+  "bankDBs": [
+    {
+      "id": 1,
+      "img": "./images/homepage_images/hero_image.png",
+      "bankName": "kuda",
+      "branch": "ikeja",
+      "streetNum": 30
+    },
+    {
+      "id": 2,
+      "img": "./images/Logo.svg",
+      "bankName": "barter",
+      "branch": "mile 12",
+      "streetNum": 100
+    },
+
+    {
+      "id": 3,
+      "img": "./images/homepage_images/hero_image.png",
+      "bankName": "kuda",
+      "branch": "ikeja",
+      "streetNum": 40
+    },
+    {
+      "id": 4,
+      "img": "./images/Logo.svg",
+      "bankName": "carbon",
+      "branch": "Ladoke",
+      "streetNum": 50
+    }
+  ],
+
+  "PersonData": [
+    {
+      "id": 1,
+      "username": "Ada"
+    },
+    {
+      "id": 2,
+      "username": "John"
+    },
+    {
+      "id": 3,
+      "username": "Esther"
+    }
+  ],
+
+  "ProductData": [
+    {
+      "id": 1,
+      "productname": "Milo"
+    },
+    {
+      "id": 2,
+      "productname": "Dano"
+    },
+    {
+      "id": 3,
+      "productname": "Peak"
+    },
+    {
+      "id": 4,
+      "productname": "Sugar"
+    }
+  ]
+}

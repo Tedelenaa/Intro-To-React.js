@@ -1,9 +1,20 @@
 import React from "react";
 // import heroImg from "./images/homepage_images/hero_image.png";
 // import Logo from "./images/Logo.svg";
+// import Logo from "../public/images/homepage_images/hero_image.png";
 import { bankDBs } from "./data";
+import data from "./data.json";
+
 import Navbar from "./Navbar";
-import { CounterApp, UpdateUser, PeopleData, ProductList } from "./useState";
+import {
+  CounterApp,
+  UpdateUser,
+  PeopleData,
+  ProductList,
+  UsestateObj,
+} from "./useState";
+
+import { MultipleInputReactForm, ReactForm, UpdateOnSubmit } from "./Forms";
 
 const App = () => {
   return (
@@ -17,10 +28,15 @@ const App = () => {
       {/* <CardComponent /> */}
       {/* <CardLogic /> */}
 
-      <UpdateUser />
+      {/* <UpdateUser />
       <CounterApp />
-      <PeopleData />
-      <ProductList />
+      <PeopleData /> */}
+      {/* <ProductList /> */}
+      {/* <UsestateObj /> */}
+
+      {/* <ReactForm /> */}
+      {/* <MultipleInputReactForm /> */}
+      <UpdateOnSubmit />
     </React.Fragment>
   );
 };
@@ -149,7 +165,14 @@ const CardLogic = () => {
 
       <div className="container">
         <div className="row">
-          {bankDBs.map((bank) => {
+          {/* {bankDBs.map((bank) => {
+            return (
+              <div className="col-md-4" key={bank.id}>
+                <CardComponent {...bank} />
+              </div>
+            );
+          })} */}
+          {data.bankDBs.map((bank) => {
             return (
               <div className="col-md-4" key={bank.id}>
                 <CardComponent {...bank} />
