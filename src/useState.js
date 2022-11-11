@@ -85,12 +85,57 @@ export const UpdateUser = () => {
 //   );
 // };
 
-export const CounterApp = () => {
+// export const CounterApp = () => {
+//   const [num, setNum] = useState(0);
+
+//   const reduceNum = () => {
+//     setNum(num - 1);
+//   };
+
+//   return (
+//     <div className="d-flex flex-column align-items-center mt-5">
+//       <h1>My Counter App</h1>
+//       <h3>The number is: {num}</h3>
+
+//       <div className="d-flex">
+//         <button
+//           className="btn btn-primary me-3"
+//           onClick={() => setNum(num + 1)}
+//         >
+//           Add
+//         </button>
+
+//         <button className="btn btn-secondary me-3" onClick={reduceNum}>
+//           Subtract
+//         </button>
+
+//         <button className="btn btn-info" onClick={() => setNum(0)}>
+//           Reset
+//         </button>
+//       </div>
+//     </div>
+//   );
+// };
+
+export const ComplexCounterApp = () => {
   const [num, setNum] = useState(0);
 
   const reduceNum = () => {
-    setNum(num - 1);
+    setTimeout(() => {
+      // setNum(num - 1);
+      setNum((prevValue) => {
+        return prevValue - 1;
+      });
+    }, 3000);
   };
+
+  // const complexIncrease = () => {
+  //   setTimeout(() => {
+  //     setValue((prevState) => {
+  //       return prevState + 1;
+  //     });
+  //   }, 2000);
+  // };
 
   return (
     <div className="d-flex flex-column align-items-center mt-5">
@@ -141,15 +186,18 @@ export const CounterApp = () => {
 //           //   const { id, bankName } = bank;
 //           return (
 //             <>
-//               <li key={id}>{username}</li>
-//               <button
-//                 className="btn btn-primary"
-//                 onClick={() => {
-//                   removeData(id);
-//                 }}
-//               >
-//                 Delete
-//               </button>
+//               <li key={id}>
+//                 {username}
+
+//                 <button
+//                   className="btn btn-primary"
+//                   onClick={() => {
+//                     removeData(id);
+//                   }}
+//                 >
+//                   Delete
+//                 </button>
+//               </li>
 //             </>
 //           );
 //         })}
@@ -167,24 +215,24 @@ export const CounterApp = () => {
 //   );
 // };
 
-export const PeopleData = () => {
-  const [users, setUsers] = useState(PersonData);
-  //   console.log(users);
-  return (
-    <div className="d-flex flex-column align-items-center mt-5">
-      <h1>Users</h1>
+// export const PeopleData = () => {
+//   const [users, setUsers] = useState(PersonData);
+//   //   console.log(users);
+//   return (
+//     <div className="d-flex flex-column align-items-center mt-5">
+//       <h1>Users</h1>
 
-      <ul className="list-item">
-        {users.map((user) => {
-          const { id, username } = user;
-          //   return <li key={user.id}>{user.username}</li>;
-          // })}
-          return <li key={id}>{username}</li>;
-        })}
-      </ul>
-    </div>
-  );
-};
+//       <ul className="list-item">
+//         {users.map((user) => {
+//           const { id, username } = user;
+//           //   return <li key={user.id}>{user.username}</li>;
+//           // })}
+//           return <li key={id}>{username}</li>;
+//         })}
+//       </ul>
+//     </div>
+//   );
+// };
 
 export const ProductList = () => {
   let [products, setProducts] = useState(ProductData);
@@ -274,6 +322,21 @@ export const UsestateObj = () => {
       <button className="btn btn-success" onClick={updateMsg}>
         Update Message
       </button>
+    </div>
+  );
+};
+
+export const DigitalClock = () => {
+  let clockValue = new Date();
+  let hr = clockValue.getHours();
+  let mins = clockValue.getMinutes();
+  let secs = clockValue.getSeconds();
+  // console.log(clockValue);
+  return (
+    <div className="d-flex justify-content-center mt-5">
+      <h3>{hr} : </h3>
+      <h3> {mins}: </h3>
+      <h3> {secs}</h3>
     </div>
   );
 };

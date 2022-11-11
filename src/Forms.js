@@ -160,7 +160,7 @@ export const UpdateOnSubmit = () => {
     e.preventDefault();
 
     if (name && email) {
-      const person = { name, email };
+      const person = { id: new Date().getTime().toString(), name, email };
 
       setPeople((prevPeople) => {
         return [...prevPeople, person];
@@ -169,6 +169,14 @@ export const UpdateOnSubmit = () => {
 
     setName("");
     setEmail("");
+  };
+
+  let removePerson = (id) => {
+    let newPerson = people.filter((Singleperson) => {
+      return Singleperson.id !== id;
+    });
+
+    setPeople(newPerson);
   };
 
   return (
@@ -210,19 +218,29 @@ export const UpdateOnSubmit = () => {
         </div>
       </form>
 
-      <div className="mt-5 d-flex align-items-center border p-3">
+      <div className="mt-5 d-flex flex-column align-items-center border p-3">
         {/* <h4 className="me-3">{name}</h4>
         <h5 className="me-3">{email}</h5> */}
 
         {people.map((person) => {
-          const { name, email } = person;
+          const { id, name, email } = person;
           return (
-            <div className="mt-5">
+            <div className="mt-2">
               <h4 className="me-3">{name}</h4>
               <h5 className="me-3">{email}</h5>
+              <button
+                className="btn btn-danger ms-3"
+                onClick={() => removePerson(id)}
+              >
+                Delete
+              </button>
             </div>
           );
         })}
+
+        <button className="btn btn-warning mt-3" onClick={() => setPeople([])}>
+          Clear All
+        </button>
       </div>
     </div>
   );

@@ -12,6 +12,8 @@ import {
   PeopleData,
   ProductList,
   UsestateObj,
+  ComplexCounterApp,
+  DigitalClock,
 } from "./useState";
 
 import { MultipleInputReactForm, ReactForm, UpdateOnSubmit } from "./Forms";
@@ -29,14 +31,17 @@ const App = () => {
       {/* <CardLogic /> */}
 
       {/* <UpdateUser />
-      <CounterApp />
-      <PeopleData /> */}
+      <CounterApp /> */}
+      {/* <PeopleData /> */}
       {/* <ProductList /> */}
       {/* <UsestateObj /> */}
 
       {/* <ReactForm /> */}
       {/* <MultipleInputReactForm /> */}
-      <UpdateOnSubmit />
+      {/* <UpdateOnSubmit /> */}
+      {/* <ComplexCounterApp /> */}
+
+      <DigitalClock />
     </React.Fragment>
   );
 };
