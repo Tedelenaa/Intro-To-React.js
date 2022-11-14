@@ -17,6 +17,7 @@ import {
 } from "./useState";
 
 import { MultipleInputReactForm, ReactForm, UpdateOnSubmit } from "./Forms";
+import MainApp from "./react_router/MainApp";
 
 const App = () => {
   return (
@@ -41,7 +42,9 @@ const App = () => {
       {/* <UpdateOnSubmit /> */}
       {/* <ComplexCounterApp /> */}
 
-      <DigitalClock />
+      {/* <DigitalClock /> */}
+
+      <MainApp />
     </React.Fragment>
   );
 };
