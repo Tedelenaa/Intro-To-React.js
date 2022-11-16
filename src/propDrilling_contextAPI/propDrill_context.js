@@ -1,106 +1,6 @@
 import { useReducer, useState } from "react";
 import { countReducer, ACTIONS } from "./reducerFunc";
 
-const initCountValue = {
-  count: 0,
-  user: "",
-};
-
-// const countReducer = (state, action) => {
-//   switch (action.type) {
-//     case "increment":
-//       return { ...state, count: state.count + 1 };
-
-//     case "decrement":
-//       return { ...state, count: state.count - 1 };
-
-//     case "reset":
-//       return { count: 0 };
-
-//     case "userInput":
-//       return { ...state, user: action.payload };
-
-//     default:
-//       throw new Error("action does not exist");
-//   }
-// };
-
-// const ACTIONS = {
-//   INCREMENT: "increment",
-//   DECREMENT: "decrement",
-//   RESET: "reset",
-//   USER_INPUT: "userInput",
-// };
-
-// counter app usestate
-export const CounterUseRedApp = () => {
-  // const [count, setCount] = useState(0);
-  const [state, dispatch] = useReducer(countReducer, initCountValue);
-
-  //   const addNum = () => {
-  //     setCount((prevCount) => {
-  //       return prevCount + 1;
-  //     });
-  //   };
-
-  //   const reduceNum = () => {
-  //     setCount((prevCount) => {
-  //       return prevCount - 1;
-  //     });
-  //   };
-
-  //   const reset = () => {
-  //     return setCount(0);
-  //   };
-
-  return (
-    <div className="d-flex flex-column align-items-center mt-5 pt-5">
-      <h1>Counter</h1>
-      <h3>{state.count}</h3>
-      <div className="d-flex mb-5">
-        {/* <button className="btn btn-primary me-3" onClick={addNum}>
-          Add
-        </button> */}
-        <button
-          className="btn btn-primary me-3"
-          //   onClick={() => dispatch({ type: "increment" })}
-          onClick={() => dispatch({ type: ACTIONS.INCREMENT })}
-        >
-          Add
-        </button>
-        {/* <button className="btn btn-primary me-3" onClick={reduceNum}>
-          Remove
-        </button> */}
-        <button
-          className="btn btn-primary me-3"
-          onClick={() => dispatch({ type: ACTIONS.DECREMENT })}
-        >
-          Reduce
-        </button>
-        {/* <button className="btn btn-primary" onClick={reset}>
-          Reset
-        </button> */}
-        <button
-          className="btn btn-primary"
-          onClick={() => dispatch({ type: "reset" })}
-        >
-          Reset
-        </button>
-      </div>
-      <input
-        type="text"
-        className="mb-3"
-        name="username"
-        onChange={(e) =>
-          dispatch({ type: "userInput", payload: e.target.value })
-        }
-      />
-
-      <p>{state.user}</p>
-    </div>
-  );
-};
-
 const initValues = [
   {
     username: "Mariam",
@@ -120,7 +20,7 @@ const dataReducer = (state, action) => {
 };
 
 // counter app usestate
-export const DataUseRedApp = () => {
+export const DataUserApp = () => {
   const initFormValues = {
     username: "",
     email: "",

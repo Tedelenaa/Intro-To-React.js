@@ -1,10 +1,27 @@
 import React from "react";
-import CounterUseRedApp from "./CounterUseRedApp";
+import {
+  ConditionalRend,
+  MultipleRet,
+} from "../conditionalRendering/ConditionalRend";
+import { CounterApp } from "../propDrilling_contextAPI/CounterApp/CounterApp";
+import {
+  ConditionalR,
+  CounterUseRedApp,
+  DataUseRedApp,
+} from "./CounterUseRedApp";
+// import {DataUseRedApp} from './CounterUseRedApp'
+import NewCounter from "./NewCounter";
 
 const MainApp = () => {
   return (
     <div>
-      <CounterUseRedApp />
+      {/* <CounterUseRedApp />
+      <DataUseRedApp /> */}
+      {/* <ConditionalR /> */}
+      {/* <NewCounter /> */}
+      {/* <ConditionalRend /> */}
+      {/* <MultipleRet /> */}
+      <CounterApp />
     </div>
   );
 };
